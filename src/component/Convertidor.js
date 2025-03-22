@@ -64,7 +64,7 @@ export default function Convertidor_Monedas(){
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
             <View style={styles.container}>
                 <Text style={styles.text}>Convertidor de Divisas</Text>
-                <Image source={require('../../images/Divisa.png')}/>
+                <Image source={require('../../images/Divisa.png')} style={{margin:10}}/>
                 <TextInput
                     style={styles.input}
                     placeholder="Valor MXN"
@@ -112,12 +112,13 @@ const styles = StyleSheet.create({
     },
     input: {
         width: '80%',
-        borderColor: '#D3D3D3',
+        borderColor: 'black',
         borderRadius: 5,
         padding: 10,
         marginBottom: 10,
         fontWeight: 'bold',
         fontSize: 25,
+        borderWidth: 2,
     },
     row: {
         flexDirection: 'row',
