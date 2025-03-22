@@ -1,5 +1,5 @@
 ﻿import React,{useState} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, TextInput} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, TextInput, TouchableWithoutFeedback, Keyboard, Image} from 'react-native';
 
 export default function Convertidor_Monedas(){
     const[MonedaMXN, setMonedaMXN] = useState('');
@@ -9,8 +9,8 @@ export default function Convertidor_Monedas(){
         if (parseFloat(MonedaMXN) <= 0) {
             setResultado("Error: Valor negativo")
         }else{
-            const res = parseInt(MonedaMXN) * 0.055;
-            setResultado(res.toString());
+            const res = parseFloat(MonedaMXN) * 0.055;
+            setResultado(res.toFixed(2).toString());
         }
 
     };
@@ -19,8 +19,8 @@ export default function Convertidor_Monedas(){
         if (parseFloat(MonedaMXN) <= 0) {
             setResultado("Error: Valor negativo")
         }else {
-            const res = parseInt(MonedaMXN) * 0.048;
-            setResultado(res.toString());
+            const res = parseFloat(MonedaMXN) * 0.048;
+            setResultado(res.toFixed(2).toString());
         }
     };
 
@@ -28,8 +28,8 @@ export default function Convertidor_Monedas(){
         if (parseFloat(MonedaMXN) <= 0) {
             setResultado("Error: Valor negativo")
         }else{
-            const res = parseInt(MonedaMXN) * 7.31;
-            setResultado(res.toString());
+            const res = parseFloat(MonedaMXN) * 7.31;
+            setResultado(res.toFixed(2).toString());
         }
     };
 
@@ -37,8 +37,8 @@ export default function Convertidor_Monedas(){
         if (parseFloat(MonedaMXN) <= 0) {
             setResultado("Error: Valor negativo")
         }else {
-            const res = parseInt(MonedaMXN) * 0.044;
-            setResultado(res.toString());
+            const res = parseFloat(MonedaMXN) * 0.044;
+            setResultado(res.toFixed(2).toString());
         }
     };
 
@@ -46,8 +46,8 @@ export default function Convertidor_Monedas(){
         if (parseFloat(MonedaMXN) <= 0) {
             setResultado("Error: Valor negativo")
         }else{
-            const res = parseInt(MonedaMXN) * 2.75;
-            setResultado(res.toString());
+            const res = parseFloat(MonedaMXN) * 2.75;
+            setResultado(res.toFixed(2).toString());
         }
     };
 
@@ -55,45 +55,49 @@ export default function Convertidor_Monedas(){
         if (parseFloat(MonedaMXN) <= 0) {
             setResultado("Error: Valor negativo")
         }else {
-            const res = parseInt(MonedaMXN) * 0.61;
-            setResultado(res.toString());
+            const res = parseFloat(MonedaMXN) * 0.61;
+            setResultado(res.toFixed(2).toString());
         }
     };
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.text}>Convertidor de Divisas</Text>
-            <TextInput
-                style={styles.input}
-                placeholder="Valor MXN"
-                placeholderTextColor="black"
-                keyboardType="numeric"
-                onChangeText={setMonedaMXN}/>
-            <View style={styles.row}>
-                <TouchableOpacity style={styles.button} onPress={dolar}>
-                    <Text style={styles.buttonText}>Dolar</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button} onPress={euro}>
-                    <Text style={styles.buttonText}>Euro</Text>
-                </TouchableOpacity>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+            <View style={styles.container}>
+                <Text style={styles.text}>Convertidor de Divisas</Text>
+                <Image source={require('../../images/Divisa.png')}/>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Valor MXN"
+                    placeholderTextColor="black"
+                    keyboardType="numeric"
+                    onChangeText={setMonedaMXN}/>
+                <View style={styles.row}>
+                    <TouchableOpacity style={styles.button} onPress={dolar}>
+                        <Text style={styles.buttonText}>Dolar</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.button} onPress={euro}>
+                        <Text style={styles.buttonText}>Euro</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.row}>
+                    <TouchableOpacity style={styles.button} onPress={yen}>
+                        <Text style={styles.buttonText}>Yen</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.button} onPress={libra}>
+                        <Text style={styles.buttonText}>Libra</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.row}>
+                    <TouchableOpacity style={styles.button} onPress={yuan}>
+                        <Text style={styles.buttonText}>Yuan</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.button} onPress={ntd}>
+                        <Text style={styles.buttonText}>NTD</Text>
+                    </TouchableOpacity>
+                </View>
+                <Text style={styles.resultado}>Resultado: ${resultado}</Text>
             </View>
-            <View style={styles.row}>
-                <TouchableOpacity style={styles.button} onPress={yen}>
-                    <Text style={styles.buttonText}>Yen</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button} onPress={libra}>
-                    <Text style={styles.buttonText}>Libra</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.row}>
-                <TouchableOpacity style={styles.button} onPress={yuan}>
-                    <Text style={styles.buttonText}>Yuan</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button} onPress={ntd}>
-                    <Text style={styles.buttonText}>NTD</Text>
-                </TouchableOpacity>
-            </View>
-        </View>
+        </TouchableWithoutFeedback>
     );
 
 }
@@ -112,6 +116,8 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: 10,
         marginBottom: 10,
+        fontWeight: 'bold',
+        fontSize: 25,
     },
     row: {
         flexDirection: 'row',
