@@ -10,7 +10,7 @@ export default function Convertidor_Monedas(){
             setResultado("Error: Valor negativo")
         }else{
             const res = parseFloat(MonedaMXN) * 0.055;
-            setResultado(res.toFixed(2).toString());
+            setResultado("$" + res.toFixed(2).toString());
         }
 
     };
@@ -20,7 +20,7 @@ export default function Convertidor_Monedas(){
             setResultado("Error: Valor negativo")
         }else {
             const res = parseFloat(MonedaMXN) * 0.048;
-            setResultado(res.toFixed(2).toString());
+            setResultado("$" + res.toFixed(2).toString());
         }
     };
 
@@ -29,7 +29,7 @@ export default function Convertidor_Monedas(){
             setResultado("Error: Valor negativo")
         }else{
             const res = parseFloat(MonedaMXN) * 7.31;
-            setResultado(res.toFixed(2).toString());
+            setResultado("$" + res.toFixed(2).toString());
         }
     };
 
@@ -38,7 +38,7 @@ export default function Convertidor_Monedas(){
             setResultado("Error: Valor negativo")
         }else {
             const res = parseFloat(MonedaMXN) * 0.044;
-            setResultado(res.toFixed(2).toString());
+            setResultado("$" + res.toFixed(2).toString());
         }
     };
 
@@ -47,7 +47,7 @@ export default function Convertidor_Monedas(){
             setResultado("Error: Valor negativo")
         }else{
             const res = parseFloat(MonedaMXN) * 2.75;
-            setResultado(res.toFixed(2).toString());
+            setResultado("$" + res.toFixed(2).toString());
         }
     };
 
@@ -56,7 +56,7 @@ export default function Convertidor_Monedas(){
             setResultado("Error: Valor negativo")
         }else {
             const res = parseFloat(MonedaMXN) * 0.61;
-            setResultado(res.toFixed(2).toString());
+            setResultado("$" + res.toFixed(2).toString());
         }
     };
 
@@ -73,29 +73,35 @@ export default function Convertidor_Monedas(){
                     onChangeText={setMonedaMXN}/>
                 <View style={styles.row}>
                     <TouchableOpacity style={styles.button} onPress={dolar}>
+                        <Image source={require('../../images/USA.png')} style={styles.icon}/>
                         <Text style={styles.buttonText}>Dolar</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button} onPress={euro}>
+                        <Image source={require('../../images/UE.png')} style={styles.icon}/>
                         <Text style={styles.buttonText}>Euro</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.row}>
                     <TouchableOpacity style={styles.button} onPress={yen}>
+                        <Image source={require('../../images/Japon.png')} style={styles.icon}/>
                         <Text style={styles.buttonText}>Yen</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button} onPress={libra}>
+                        <Image source={require('../../images/UK.png')} style={styles.icon}/>
                         <Text style={styles.buttonText}>Libra</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.row}>
                     <TouchableOpacity style={styles.button} onPress={yuan}>
+                        <Image source={require('../../images/China.png')} style={styles.icon}/>
                         <Text style={styles.buttonText}>Yuan</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button} onPress={ntd}>
+                        <Image source={require('../../images/Taiwan.png')} style={styles.icon}/>
                         <Text style={styles.buttonText}>NTD</Text>
                     </TouchableOpacity>
                 </View>
-                <Text style={styles.resultado}>Resultado: ${resultado}</Text>
+                <Text style={styles.resultado}>Resultado: {resultado}</Text>
             </View>
         </TouchableWithoutFeedback>
     );
@@ -105,7 +111,7 @@ export default function Convertidor_Monedas(){
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#B2FFFF',
+        backgroundColor: '#327ba8',
         alignItems: 'center',
         justifyContent: 'center',
         height: '100%',
@@ -119,6 +125,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 25,
         borderWidth: 2,
+        color: '#F0F0F0'
     },
     row: {
         flexDirection: 'row',
@@ -132,7 +139,8 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 10,
         borderColor: 'black',
-        marginHorizontal: 15
+        marginHorizontal: 15,
+        flexDirection: 'row',
     },
     buttonText: {
         color: 'black',
@@ -143,10 +151,17 @@ const styles = StyleSheet.create({
     resultado: {
         fontSize: 25,
         fontWeight: 'bold',
+        color: '#F0F0F0'
     },
     text: {
         fontSize: 25,
         fontWeight: 'bold',
         textAlignVertical: 'top',
+        color: '#F0F0F0'
+    },
+    icon: {
+        width: 35,
+        height: 25,
+        margin: 5
     }
 })
