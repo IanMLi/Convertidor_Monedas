@@ -154,7 +154,8 @@ const styles = StyleSheet.create({
     resultado: {
         fontSize: 25,
         fontWeight: 'bold',
-        color: '#F0F0F0'
+        color: '#F0F0F0',
+        textAlign: 'center',
     },
     text: {
         fontSize: 20,
