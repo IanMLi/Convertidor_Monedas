@@ -63,8 +63,9 @@ export default function Convertidor_Monedas(){
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
             <View style={styles.container}>
-                <Text style={styles.text}>Convertidor de Divisas</Text>
-                <Text style={styles.text}>Para Pesos Mexicanos</Text>
+                <Text style={styles.title}>MoneyApp</Text>
+                <Text style={styles.text}>Convertidor de Divisas Para Pesos Mexicanos</Text>
+                <Text style={styles.text}></Text>
                 <Image source={require('../../images/Divisa.png')} style={{margin:10}}/>
                 <TextInput
                     style={styles.input}
@@ -116,13 +117,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         height: '100%',
+        margin: 10,
     },
     input: {
         width: '80%',
         borderColor: 'black',
         borderRadius: 5,
-        padding: 10,
-        marginBottom: 10,
+        padding: 15,
+        margin: 10,
         fontWeight: 'bold',
         fontSize: 25,
         borderWidth: 2,
@@ -155,14 +157,23 @@ const styles = StyleSheet.create({
         color: '#F0F0F0'
     },
     text: {
-        fontSize: 25,
+        fontSize: 20,
         fontWeight: 'bold',
         textAlignVertical: 'top',
-        color: '#F0F0F0'
+        color: '#F0F0F0',
+        textAlign: "center",
     },
     icon: {
         width: 35,
         height: 25,
         margin: 5
+    },
+    title: {
+        fontSize: 65,
+        fontWeight: 'bold',
+        textAlignVertical: 'top',
+        color: '#F0F0F0',
+        textAlign: "center",
+        marginBottom: 10,
     }
 })
