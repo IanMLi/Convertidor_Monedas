@@ -64,6 +64,7 @@ export default function Convertidor_Monedas(){
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
             <View style={styles.container}>
                 <Text style={styles.text}>Convertidor de Divisas</Text>
+                <Text style={styles.text}>Para Pesos Mexicanos</Text>
                 <Image source={require('../../images/Divisa.png')} style={{margin:10}}/>
                 <TextInput
                     style={styles.input}
