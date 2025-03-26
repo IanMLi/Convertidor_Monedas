@@ -10,7 +10,7 @@ export default function Convertidor_Monedas(){
             setResultado("Error: Valor negativo")
         }else{
             const res = parseFloat(MonedaMXN) * 0.055;
-            setResultado("$" + res.toFixed(2).toString());
+            setResultado("$" + res.toFixed(2).toString() + " dolar");
         }
 
     };
@@ -20,7 +20,7 @@ export default function Convertidor_Monedas(){
             setResultado("Error: Valor negativo")
         }else {
             const res = parseFloat(MonedaMXN) * 0.048;
-            setResultado("$" + res.toFixed(2).toString());
+            setResultado("$" + res.toFixed(2).toString() + " euros");
         }
     };
 
@@ -29,7 +29,7 @@ export default function Convertidor_Monedas(){
             setResultado("Error: Valor negativo")
         }else{
             const res = parseFloat(MonedaMXN) * 7.31;
-            setResultado("$" + res.toFixed(2).toString());
+            setResultado("$" + res.toFixed(2).toString() + " yenes");
         }
     };
 
@@ -38,7 +38,7 @@ export default function Convertidor_Monedas(){
             setResultado("Error: Valor negativo")
         }else {
             const res = parseFloat(MonedaMXN) * 0.044;
-            setResultado("$" + res.toFixed(2).toString());
+            setResultado("$" + res.toFixed(2).toString() + " libras");
         }
     };
 
@@ -47,7 +47,7 @@ export default function Convertidor_Monedas(){
             setResultado("Error: Valor negativo")
         }else{
             const res = parseFloat(MonedaMXN) * 2.75;
-            setResultado("$" + res.toFixed(2).toString());
+            setResultado("$" + res.toFixed(2).toString() + " yuanes");
         }
     };
 
@@ -56,7 +56,7 @@ export default function Convertidor_Monedas(){
             setResultado("Error: Valor negativo")
         }else {
             const res = parseFloat(MonedaMXN) * 0.61;
-            setResultado("$" + res.toFixed(2).toString());
+            setResultado("$" + res.toFixed(2).toString() + " ntd's");
         }
     };
 
